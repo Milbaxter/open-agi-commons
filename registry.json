@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "overview": {
+    "repository": "Milbaxter/open-agi-commons",
+    "status": "active"
+  },
+  "modules": [
+    {
+      "id": "compute",
+      "title": "Hardware and distributed compute",
+      "scope": "Scheduling, hardware use, storage, and fault recovery.",
+      "verification": "Run the same checked workload with less time, cost, or energy. Count retries and failures.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "compute-maintainer"
+    },
+    {
+      "id": "kernels",
+      "title": "Compilers and numerical software",
+      "scope": "Compilers, kernels, memory layouts, and numerical precision.",
+      "verification": "Pass reference correctness tests. Show speed or memory gains on real workloads and named hardware.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "kernels-maintainer"
+    },
+    {
+      "id": "data",
+      "title": "Training data",
+      "scope": "Data collection, cleaning, labels, coverage, and data origins.",
+      "verification": "Improve unseen-task results at equal training compute. Check data rights and test contamination.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "data-maintainer"
+    },
+    {
+      "id": "environments",
+      "title": "Environments and curricula",
+      "scope": "Simulators, task generators, learning order, and rewards.",
+      "verification": "Check rewards for exploits. Show learning transfers to separately made tasks.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "environments-maintainer"
+    },
+    {
+      "id": "architectures",
+      "title": "Model structures",
+      "scope": "Attention, recurrence, expert routing, representations, and world models.",
+      "verification": "Compare capability at equal training and inference budgets. State the tested model sizes.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "architectures-maintainer"
+    },
+    {
+      "id": "pretraining",
+      "title": "Pretraining and optimization",
+      "scope": "Training objectives, optimizers, schedules, and stability.",
+      "verification": "Reach a fixed capability with fewer resources. Include failed runs and repeat measurements.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "pretraining-maintainer"
+    },
+    {
+      "id": "posttraining",
+      "title": "Post-training",
+      "scope": "Instruction tuning, reinforcement learning, feedback, and reward models.",
+      "verification": "Improve independent task results. Evaluate with a method separate from the training reward.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "posttraining-maintainer"
+    },
+    {
+      "id": "inference",
+      "title": "Inference and serving",
+      "scope": "Quantization, caching, batching, and adaptive compute.",
+      "verification": "Measure quality, cost, memory, and latency on fixed workloads. Include slow requests.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "inference-maintainer"
+    },
+    {
+      "id": "retrieval",
+      "title": "Knowledge access",
+      "scope": "Search, document parsing, retrieval, citations, and grounding.",
+      "verification": "Check retrieved evidence and final answers on unseen information. Report each result separately.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "retrieval-maintainer"
+    },
+    {
+      "id": "memory",
+      "title": "Memory and continual learning",
+      "scope": "Persistent memory, feedback, adaptation, and retention.",
+      "verification": "Improve long task sequences. Measure forgetting, false memory, and poisoned input.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "memory-maintainer"
+    },
+    {
+      "id": "reasoning",
+      "title": "Reasoning and planning",
+      "scope": "Search, plans, program generation, and proof construction.",
+      "verification": "Check executable solutions, proofs, or final outcomes. Count all attempts within a fixed budget.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "reasoning-maintainer"
+    },
+    {
+      "id": "tools",
+      "title": "Tool use and action",
+      "scope": "Software tools, browsers, computer use, and robot interfaces.",
+      "verification": "Check final outcomes, recovery, and permissions in varied environments. A transcript alone is insufficient.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "tools-maintainer"
+    },
+    {
+      "id": "agent-coordination",
+      "title": "Agent coordination",
+      "scope": "Delegation, routing, shared state, and cooperation in the system under study.",
+      "verification": "Compare with a strong single-agent baseline. Count communication, extra calls, and human help.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "agent-coordination-maintainer"
+    },
+    {
+      "id": "research",
+      "title": "Autonomous research",
+      "scope": "Hypotheses, experiment design, implementation, and result analysis.",
+      "verification": "Reproduce useful findings independently. Measure accepted outcomes per total resource budget.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "research-maintainer"
+    },
+    {
+      "id": "evaluation",
+      "title": "Evaluation and verification",
+      "scope": "Benchmarks, graders, statistics, and contamination checks.",
+      "verification": "Detect known defects. Reproduce results. Test whether scores predict success on independent tasks.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "evaluation-maintainer"
+    },
+    {
+      "id": "reliability",
+      "title": "Reliability, alignment, and security",
+      "scope": "Constraint following, uncertainty, prompt injection, containment, and interpretability.",
+      "verification": "Reduce measured failures while retaining useful capability. Make testable claims with clear limits.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "reliability-maintainer"
+    },
+    {
+      "id": "commons",
+      "title": "Project tools and reproducibility",
+      "scope": "Task formats, contribution tools, result records, and integration.",
+      "verification": "Let another person reproduce the result. Reduce the work needed to review and integrate useful changes.",
+      "status": "planned",
+      "repository": null,
+      "tested_commit": null,
+      "dependencies": [],
+      "maintainer_role": "commons-maintainer"
+    }
+  ]
+}

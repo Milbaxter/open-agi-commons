@@ -1,0 +1,33 @@
+name: Propose useful work
+description: Define one task or identify a gap in the project.
+title: "[Task] "
+labels: [proposal]
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Useful outcome
+      description: What should change, and how does it help the mission?
+    validations:
+      required: true
+  - type: input
+    id: module
+    attributes:
+      label: Stack part
+      description: Use a module ID from registry.json, or overview.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Baseline and acceptance
+      description: State the starting point, allowed changes, and evidence needed.
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: Resources and budget
+      description: State hardware, setup, time, compute needs, and stop conditions.
+    validations:
+      required: true

@@ -1,0 +1,37 @@
+{
+  "id": "001-evaluation-map",
+  "title": "Map open evaluation tools",
+  "module": "evaluation",
+  "status": "ready",
+  "question": "Which existing open tools can verify the first contribution loop?",
+  "baseline": "README.md, docs/stack.md, and docs/verification.md at the checked-out commit.",
+  "scope": [
+    "docs/research/evaluation-map.md"
+  ],
+  "resources": "A laptop, Python 3.11+, and access to public documentation. No GPU.",
+  "budget": {
+    "minutes": 30,
+    "paid_compute": false
+  },
+  "acceptance": [
+    "Cover at least three existing projects with primary source links.",
+    "For each, state license, task coverage, setup path, resource needs, and known limits.",
+    "Recommend one starting point and explain its fit with the mission.",
+    "Separate checked facts from suggestions. Do not claim an experiment was run."
+  ],
+  "checks": [
+    "make check",
+    "Manually review every cited primary source."
+  ],
+  "evidence": [
+    "Source links with access dates.",
+    "Check output.",
+    "Time spent, tool used, and unresolved questions."
+  ],
+  "stop_conditions": [
+    "30-minute budget reached.",
+    "No suitable licensed baseline found; report the gap."
+  ],
+  "deliverable": "A research map that lets a reviewer select a first evaluation tool.",
+  "issue_url": "https://github.com/Milbaxter/open-agi-commons/issues/1"
+}

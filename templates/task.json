@@ -1,0 +1,31 @@
+{
+  "id": "task-id",
+  "title": "One clear outcome",
+  "module": "commons",
+  "status": "draft",
+  "question": "What should this work establish?",
+  "baseline": "Exact versions and a command, or named input files for a planning task.",
+  "scope": [
+    "Allowed files or behavior"
+  ],
+  "resources": "Required machine, software, data, and network access.",
+  "budget": {
+    "minutes": 30,
+    "paid_compute": false
+  },
+  "acceptance": [
+    "Fixed metric, threshold, and allowed regressions, or manual review criteria."
+  ],
+  "checks": [
+    "make check"
+  ],
+  "evidence": [
+    "Commands, outputs, versions, sources, costs, and limitations."
+  ],
+  "stop_conditions": [
+    "Budget reached",
+    "Baseline cannot be reproduced"
+  ],
+  "deliverable": "A patch and a result record.",
+  "issue_url": null
+}

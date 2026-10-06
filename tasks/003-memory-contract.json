@@ -1,0 +1,38 @@
+{
+  "id": "003-memory-contract",
+  "title": "Draft the first memory experiment contract",
+  "module": "memory",
+  "status": "ready",
+  "question": "How can we measure whether memory helps across a sequence of tasks?",
+  "baseline": "README.md, docs/stack.md, and docs/verification.md at the checked-out commit.",
+  "scope": [
+    "docs/research/memory-contract.md"
+  ],
+  "resources": "A laptop, Python 3.11+, and access to public documentation. No GPU.",
+  "budget": {
+    "minutes": 30,
+    "paid_compute": false
+  },
+  "acceptance": [
+    "Name one open reference agent or implementation with a primary source and license.",
+    "Define a memory-off baseline, fixed task sequence, and equal inference budget.",
+    "Define success, forgetting, false-memory, and poisoned-input checks.",
+    "State resources, repeats, a primary threshold, and an independent run procedure.",
+    "Mark commands as proposed unless run. Keep acceptance independent from the worker."
+  ],
+  "checks": [
+    "make check",
+    "Manually review every cited primary source."
+  ],
+  "evidence": [
+    "Source links with access dates.",
+    "Check output.",
+    "Time spent, tool used, and unresolved questions."
+  ],
+  "stop_conditions": [
+    "30-minute budget reached.",
+    "No suitable licensed baseline found; report the gap."
+  ],
+  "deliverable": "A draft memory contract with clear checks and limits.",
+  "issue_url": "https://github.com/Milbaxter/open-agi-commons/issues/3"
+}

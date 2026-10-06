@@ -1,0 +1,38 @@
+{
+  "id": "002-inference-contract",
+  "title": "Draft the first inference experiment contract",
+  "module": "inference",
+  "status": "ready",
+  "question": "How can we test one inference change fairly on an open model?",
+  "baseline": "README.md, docs/stack.md, and docs/verification.md at the checked-out commit.",
+  "scope": [
+    "docs/research/inference-contract.md"
+  ],
+  "resources": "A laptop, Python 3.11+, and access to public documentation. No GPU.",
+  "budget": {
+    "minutes": 30,
+    "paid_compute": false
+  },
+  "acceptance": [
+    "Name one open baseline, its license, version selection method, and setup commands.",
+    "Define a fixed workload, quality floor, primary cost or latency metric, and minimum gain.",
+    "State hardware, repeat count, uncertainty method, and total budget.",
+    "Define an independent verification procedure and allowed regressions.",
+    "Mark all commands as proposed unless actually run. This task creates a draft contract."
+  ],
+  "checks": [
+    "make check",
+    "Manually review every cited primary source."
+  ],
+  "evidence": [
+    "Source links with access dates.",
+    "Check output.",
+    "Time spent, tool used, and unresolved questions."
+  ],
+  "stop_conditions": [
+    "30-minute budget reached.",
+    "No suitable licensed baseline found; report the gap."
+  ],
+  "deliverable": "A draft experiment contract for review. No training or performance claim.",
+  "issue_url": "https://github.com/Milbaxter/open-agi-commons/issues/2"
+}
