@@ -1,0 +1,14 @@
+[
+  {"id": "whole-word-plan", "query": "plan", "expected_top1": "b-plan", "split": "development"},
+  {"id": "whole-word-cache", "query": "cache", "expected_top1": "b-cache", "split": "development"},
+  {"id": "coverage-memory", "query": "memory permissions", "expected_top1": "b-memory-policy", "split": "development"},
+  {"id": "coverage-sources", "query": "cite sources", "expected_top1": "b-cite", "split": "development"},
+  {"id": "coverage-tool", "query": "tool timeout", "expected_top1": "b-tool", "split": "acceptance"},
+  {"id": "plain-quantization", "query": "quantization", "expected_top1": "b-serving", "split": "acceptance"},
+  {"id": "plain-retrieval", "query": "retrieval latency", "expected_top1": "b-retrieval", "split": "acceptance"},
+  {"id": "coverage-retention", "query": "forgetting memory", "expected_top1": "b-retention", "split": "acceptance"},
+  {"id": "no-overlap", "query": "volcano", "expected_top1": null, "split": "acceptance"},
+  {"id": "empty-query", "query": "", "expected_top1": null, "split": "acceptance"},
+  {"id": "case-punctuation", "query": "CACHE!", "expected_top1": "b-cache", "split": "acceptance"},
+  {"id": "query-punctuation", "query": "plan, sequence", "expected_top1": "b-plan", "split": "acceptance"}
+]

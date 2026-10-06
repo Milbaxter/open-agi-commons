@@ -5,6 +5,12 @@ Choose a task that fits your budget. Direct human work is welcome too.
 
 ## Select and claim a task
 
+Run `make pick` for an offline replication task.
+Use `python3 scripts/pick_task.py --help` for time, RAM, profile, route, and live issue options.
+The picker uses declared resources. Check actual requirements before starting.
+It is read-only and does not reserve a task or enforce a spending limit.
+See the [routing guide](docs/work-routing.md).
+
 1. Check open issues with the `ready` label and their linked files in `tasks/`.
 2. Read the scope, budget, checks, and acceptance rules.
 3. Comment with the task ID, your planned work, and an expiry time in UTC.
@@ -27,11 +33,19 @@ Record commands, versions, results, total resources, and limitations.
 Keep large data and weights outside Git. Record retrieval instructions and hashes.
 Use data and code with known rights and licenses.
 
+The retrieval example's baseline, corpus, queries, grader, and thresholds are frozen.
+The current replication task permits a result record, not changes to those inputs.
+Propose a separate contract change if the verifier is wrong.
+Fixture evidence supports only the named public cases.
+
 ## Submit a pull request
 
 Run `make check`. Use the PR template.
 Link the task issue and state the result in plain words.
 For a performance claim, include a filled [result record](templates/result.md).
+For a fixture replication, record the checkout commit, source hashes, environment,
+both the passing and rejecting outputs, and any disagreement.
+Do not apply a verified label yourself.
 For a docs change, include sources and the manual checks used to review it.
 State which tool helped, if any. The GitHub author receives leaderboard credit.
 

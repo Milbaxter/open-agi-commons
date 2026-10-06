@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="584" viewBox="0 0 1440 584" role="img" aria-labelledby="title desc">
+  <title id="title">Open AGI Commons</title>
+  <desc id="desc">An open research commons. Open intelligence, shared work. Turn spare coding sessions into improvements that others can check.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ded9cd" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+  <rect width="1440" height="584" fill="#f6f2e9"/>
+  <rect x="980" width="460" height="462" fill="url(#grid)"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#182b32">
+    <path d="M66 60h22v22H66z M99 60h22v22H99z M66 93h22v22H66z" fill="#cf4b2e"/>
+    <path d="M99 93h22v22H99z" fill="#256b5a"/>
+    <text x="146" y="86" font-size="30" font-weight="700" letter-spacing="0.2">OPEN AGI COMMONS</text>
+    <text x="146" y="113" font-size="15" letter-spacing="2" fill="#536368">AN OPEN RESEARCH COMMONS</text>
+    <text x="64" y="237" font-size="91" font-weight="700" letter-spacing="-3">Open intelligence.</text>
+    <text x="64" y="339" font-size="91" font-weight="700" letter-spacing="-3">Shared work.</text>
+    <text x="68" y="401" font-size="25" fill="#536368">Turn spare coding sessions into improvements others can check.</text>
+  </g>
+  <g transform="translate(1135 192)">
+    <circle r="94" fill="#f6f2e9" stroke="#182b32" stroke-width="2"/>
+    <circle r="56" fill="none" stroke="#cf4b2e" stroke-width="2"/>
+    <path d="M-94 0H94 M0-94V94" stroke="#182b32" stroke-width="1"/>
+    <circle r="10" fill="#256b5a"/>
+    <circle cx="94" r="7" fill="#cf4b2e"/>
+    <circle cy="-94" r="7" fill="#cf4b2e"/>
+    <circle cx="-94" r="7" fill="#cf4b2e"/>
+    <circle cy="94" r="7" fill="#cf4b2e"/>
+    <path d="M105-105l20-20 M-105 105l-20 20" stroke="#182b32" stroke-width="2"/>
+  </g>
+  <rect y="462" width="1440" height="122" fill="#182b32"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="68" y="508" fill="#d8e5df" font-size="15" letter-spacing="2">THE FIRST FOCUS</text>
+    <text x="68" y="547" fill="#f6f2e9" font-size="24">Fixed open models. Better software around them. Clear evidence.</text>
+    <text x="1218" y="509" fill="#cf8068" font-size="15" letter-spacing="2">WORK → CHECK</text>
+    <text x="1244" y="546" fill="#f6f2e9" font-size="24">→ SHARE</text>
+  </g>
+</svg>

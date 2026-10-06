@@ -34,5 +34,14 @@
     "No suitable licensed baseline found; report the gap."
   ],
   "deliverable": "A draft experiment contract for review. No training or performance claim.",
-  "issue_url": "https://github.com/Milbaxter/open-agi-commons/issues/2"
+  "issue_url": "https://github.com/Milbaxter/open-agi-commons/issues/2",
+  "priority": 32,
+  "dependencies": [],
+  "routing": {
+    "profile": "cpu",
+    "network": true,
+    "min_ram_gb": 4,
+    "work_type": "research",
+    "artifact_access": "public"
+  }
 }

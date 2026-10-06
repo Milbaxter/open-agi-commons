@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="612" viewBox="0 0 1440 612" role="img" aria-labelledby="title desc">
+  <title id="title">The software after the training run</title>
+  <desc id="desc">Start with a fixed open model. Improve inference, retrieval, memory, reasoning, and tools. Evaluation, reliability, and contribution tools check every part. Coordination and research follow a working single-agent baseline.</desc>
+  <rect width="1440" height="612" fill="#f6f2e9"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#182b32">
+    <text x="48" y="55" font-size="15" letter-spacing="2" fill="#536368">THE WORK AFTER THE TRAINING RUN</text>
+    <text x="48" y="104" font-size="36" font-weight="700">Keep the model fixed. Improve one part. Check the whole task.</text>
+    <path d="M48 131H1392" stroke="#cfc8bb"/>
+    <rect x="48" y="157" width="1344" height="55" rx="6" fill="#e5e1d7"/>
+    <text x="72" y="192" font-size="20" font-weight="700">STARTING POINT</text>
+    <text x="282" y="192" font-size="20">An existing open model · fixed weights, prompts, workload, and budget</text>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g fill="#fffdf8" stroke="#cfc8bb">
+      <rect x="48" y="246" width="248" height="146" rx="6"/>
+      <rect x="322" y="246" width="248" height="146" rx="6"/>
+      <rect x="596" y="246" width="248" height="146" rx="6"/>
+      <rect x="870" y="246" width="248" height="146" rx="6"/>
+      <rect x="1144" y="246" width="248" height="146" rx="6"/>
+    </g>
+    <g fill="#cf4b2e" font-size="14" font-weight="700" letter-spacing="1">
+      <text x="68" y="276">01 / SERVE</text><text x="342" y="276">02 / FIND</text>
+      <text x="616" y="276">03 / RETAIN</text><text x="890" y="276">04 / SOLVE</text>
+      <text x="1164" y="276">05 / ACT</text>
+    </g>
+    <g fill="#182b32" font-size="28" font-weight="700">
+      <text x="68" y="321">Inference</text><text x="342" y="321">Retrieval</text>
+      <text x="616" y="321">Memory</text><text x="890" y="321">Reasoning</text>
+      <text x="1164" y="321">Tools</text>
+    </g>
+    <g fill="#536368" font-size="18">
+      <text x="68" y="359">Quality per resource</text><text x="342" y="359">Evidence per answer</text>
+      <text x="616" y="359">Useful, permitted state</text><text x="890" y="359">Checked solutions</text>
+      <text x="1164" y="359">Correct final outcomes</text>
+    </g>
+    <g fill="#cf4b2e" font-size="21">
+      <text x="299" y="328">→</text><text x="573" y="328">→</text>
+      <text x="847" y="328">→</text><text x="1121" y="328">→</text>
+    </g>
+    <rect x="48" y="420" width="1344" height="63" rx="6" fill="#256b5a"/>
+    <text x="72" y="459" fill="#f6f2e9" font-size="21" font-weight="700">CHECK EVERY PART</text>
+    <text x="327" y="459" fill="#f6f2e9" font-size="21">Evaluation · Reliability · Reproducible tasks and evidence</text>
+    <path d="M48 510H1392" stroke="#cfc8bb"/>
+    <text x="48" y="547" fill="#536368" font-size="18">NEXT LAYER</text>
+    <text x="196" y="547" fill="#182b32" font-size="20">Agent coordination and autonomous research, after a checked single-agent baseline.</text>
+    <text x="48" y="582" fill="#536368" font-size="16">This is a work map. Components can interact in several orders. Every result stays within its tested scope.</text>
+  </g>
+</svg>

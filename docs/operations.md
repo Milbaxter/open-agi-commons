@@ -5,7 +5,14 @@
 `make check` validates the registry, task fields, generated leaderboard, and local links.
 Unit tests check merged-only credit, bot exclusion, pagination, categories,
 multiple repos, tied ranks, and preservation of prior data after an API failure.
+They also test resource routing, dependencies, claims, malformed tasks,
+fixture acceptance and rejection, ranker determinism, and source identity.
 GitHub Actions runs these checks on pushes and pull requests.
+
+`make pick` runs the local task picker. `make demo` runs the public retrieval fixture.
+`make demo-reject` confirms that the unchanged baseline fails the improvement rule.
+See [work routing](work-routing.md) and the [example](../examples/retrieval/README.md).
+These commands do not start a model or agent.
 
 The leaderboard job runs daily at 03:23 UTC and can be started manually.
 It also runs when its script, workflow, or the registry changes on main.
@@ -23,6 +30,8 @@ If branch rules later block that commit, change this job to submit a snapshot PR
 registry.json has one active overview entry and 17 component entries.
 Each component records scope, verification, status, repository, tested commit,
 dependencies, and its maintainer role.
+The `current_focus` list names the ten downstream workstreams.
+Their `guide` paths point to the detailed work and evidence plans.
 
 - `planned`: no repo or tested commit yet.
 - `active`: a real repo is accepting work and is included in the leaderboard.
@@ -43,6 +52,10 @@ Private repos would need separate access and a reviewed change to this process.
 tasks/*.json contains versioned task contracts.
 Each contract gives a question, baseline, scope, resources, budget, acceptance,
 checks, evidence, stop conditions, deliverable, and issue URL.
+Routing fields add priority, task dependencies, machine profile, network need,
+minimum RAM, work type, and public artifact access.
+Runnable tasks can link a verification contract and baseline artifact hashes.
+The picker filters these declared fields. It does not inspect the machine automatically.
 Use templates/task.json for new work. A maintainer checks readiness before publication.
 Planning tasks use document inputs and manual acceptance criteria.
 Experiment tasks must also have working baseline and verification commands.
@@ -50,7 +63,7 @@ Experiment tasks must also have working baseline and verification commands.
 Issue labels track live state: `proposal`, `ready`, `claimed`, `needs-verification`,
 and `blocked`. Close the issue when its work is accepted.
 An assignee and a maintainer-confirmed UTC expiry record an active claim.
-This version has no automatic task allocator, claim service, or agent runner.
+This version has a read-only local picker. It has no task reservation service or agent runner.
 The component maintainer brief is in roles/component-maintainer.md.
 
 ## Leaderboard rules
@@ -71,6 +84,10 @@ The raw JSON links each counted PR so people can inspect and correct the score.
 
 The first commit is a direct repo setup. It is not a PR and gives no leaderboard points.
 The first accepted contributor PR starts the board.
+
+Use a verified label only when a separate contributor's run and verdict are linked.
+The fixture runner always records `independent_verification: false`.
+A green fixture or CI check must not automatically add the label.
 
 ## Manual refresh
 

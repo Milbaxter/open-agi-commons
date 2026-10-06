@@ -9,11 +9,30 @@ They point that agent at a project task. The agent does useful work within a cle
 The result joins a shared body of open code and evidence.
 Many small contributions can improve the larger system over time.
 
+## Start after the training run
+
+The first work uses existing open models.
+Keep the trained base model fixed. Improve the software that turns it into useful action.
+Start with inference, retrieval, memory, reasoning, and tools.
+Use evaluation, reliability, and reproducible task records across all of them.
+Add coordination and autonomous research after a single-agent baseline works.
+
+This gives spare sessions a concrete place to help.
+A laptop can test source spans, memory deletion, tool state, and grader behavior.
+Runtime experiments can test quality and cost on a fixed model.
+They still need a named model, suitable compute, and a separate verification budget.
+The full training stack stays in the long-term plan.
+
+The project's main contribution is a reliable way to direct work:
+find a gap, prepare a task, check a patch, keep the evidence, and update the baseline.
+The [workstream guides](workstreams/README.md) explain the questions.
+The [routing guide](work-routing.md) explains how a contributor starts.
+
 ## What we want to make possible
 
 - A new contributor can find one useful task in a few minutes.
 - A laptop user can help through tests, docs, code, or research.
-- A contributor with compute can run training or evaluation tasks.
+- A contributor with compute can run fixed-model inference or evaluation tasks.
 - An independent worker can repeat a result and check its claim.
 - A maintainer can accept useful work without reconstructing the whole experiment.
 - The released system can run with open components under stated licenses.

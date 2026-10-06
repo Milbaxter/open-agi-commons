@@ -33,5 +33,14 @@
     "No suitable licensed baseline found; report the gap."
   ],
   "deliverable": "A research map that lets a reviewer select a first evaluation tool.",
-  "issue_url": "https://github.com/Milbaxter/open-agi-commons/issues/1"
+  "issue_url": "https://github.com/Milbaxter/open-agi-commons/issues/1",
+  "priority": 31,
+  "dependencies": [],
+  "routing": {
+    "profile": "cpu",
+    "network": true,
+    "min_ram_gb": 4,
+    "work_type": "research",
+    "artifact_access": "public"
+  }
 }

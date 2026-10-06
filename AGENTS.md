@@ -3,6 +3,7 @@
 This repo is the overview for Open AGI Commons.
 The mission is to turn spare subscription capacity into checked improvements to open-source AGI.
 Read README.md, CONTRIBUTING.md, and the selected task before work.
+The current focus is the software around a fixed open model after training.
 
 - Work on one task in a separate branch. Keep to its scope and budget.
 - Use short sentences, common words, and one term for each concept.
@@ -11,6 +12,8 @@ Read README.md, CONTRIBUTING.md, and the selected task before work.
 - Keep account credentials local. Use supported tools under the contributor's account.
 - Do not start paid compute without the contributor's permission.
 - Record evidence and limitations. Do not claim an untested gain.
+- A public fixture result is not a model capability result or independent verification.
+- Keep all attempt and resource records, including failed candidates.
 - Do not change acceptance rules to approve your own result.
 - Do not split a useful change only to increase leaderboard credit.
 - Run `make check` before submission.
@@ -18,5 +21,6 @@ Read README.md, CONTRIBUTING.md, and the selected task before work.
 - Stop at the task budget. Save useful partial work and a handover.
 
 Read docs/operations.md for registry and leaderboard changes.
+Read docs/work-routing.md for task fit and live claim checks.
 Read docs/verification.md for experiments.
 The files in roles/ describe future maintainer duties. They do not start agents.

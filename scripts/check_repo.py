@@ -2,12 +2,14 @@
 """Check registry, task contracts, generated credit, and local Markdown links."""
 
 import json
+import hashlib
 from pathlib import Path
 import re
 import sys
 from urllib.parse import unquote
 
 from update_leaderboard import active_repositories, render
+from task_contracts import load_tasks, require
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -29,17 +31,23 @@ def check(root=ROOT):
             assert entry["repository"], "Tested commit needs a repository"
             assert re.fullmatch(r"[0-9a-f]{40}", entry["tested_commit"]), "Use a full commit SHA"
 
-    task_ids = set()
-    for path in sorted((root / "tasks").glob("*.json")):
-        task = json.loads(path.read_text())
-        assert task["id"] == path.stem and task["id"] not in task_ids, "Invalid task ID"
-        task_ids.add(task["id"])
+    tasks = load_tasks(root / "tasks")
+    task_ids = {task["id"] for task in tasks}
+    for task in tasks:
         assert task["module"] in ids | {"overview"}, "Unknown task module"
-        assert task["status"] in {"draft", "ready", "done"}, "Invalid task readiness"
-        for key in ("title", "question", "baseline", "scope", "resources", "acceptance", "checks", "evidence", "stop_conditions", "deliverable"):
-            assert task.get(key), f"{path.name}: missing {key}"
-        assert isinstance(task["budget"]["minutes"], int) and task["budget"]["minutes"] > 0, "Invalid time budget"
-        assert isinstance(task["budget"]["paid_compute"], bool), "Paid compute must be explicit"
+        if task.get("verification"):
+            spec = task["verification"]
+            require((root / spec["contract"]).is_file(), f"{task['id']}: missing contract")
+            for artifact in spec["baseline_artifacts"]:
+                path = root / artifact["path"]
+                require(path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest() == artifact["sha256"],
+                        f"{task['id']}: baseline artifact changed: {artifact['path']}")
+
+    contract = json.loads((root / "examples/retrieval/contract.json").read_text())
+    for artifact in contract["frozen_artifacts"]:
+        path = root / artifact["path"]
+        require(path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest() == artifact["sha256"],
+                f"Demo contract artifact changed: {artifact['path']}")
 
     snapshot = json.loads((root / "data/leaderboard.json").read_text())
     assert snapshot["schema_version"] == 1, "Unsupported leaderboard schema"

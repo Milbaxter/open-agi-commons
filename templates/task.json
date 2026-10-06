@@ -27,5 +27,14 @@
     "Baseline cannot be reproduced"
   ],
   "deliverable": "A patch and a result record.",
-  "issue_url": null
+  "issue_url": null,
+  "priority": 50,
+  "dependencies": [],
+  "routing": {
+    "profile": "cpu",
+    "network": false,
+    "min_ram_gb": 4,
+    "work_type": "engineering",
+    "artifact_access": "public"
+  }
 }

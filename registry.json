@@ -91,7 +91,8 @@
       "repository": null,
       "tested_commit": null,
       "dependencies": [],
-      "maintainer_role": "inference-maintainer"
+      "maintainer_role": "inference-maintainer",
+      "guide": "docs/workstreams/inference.md"
     },
     {
       "id": "retrieval",
@@ -102,7 +103,8 @@
       "repository": null,
       "tested_commit": null,
       "dependencies": [],
-      "maintainer_role": "retrieval-maintainer"
+      "maintainer_role": "retrieval-maintainer",
+      "guide": "docs/workstreams/retrieval.md"
     },
     {
       "id": "memory",
@@ -113,7 +115,8 @@
       "repository": null,
       "tested_commit": null,
       "dependencies": [],
-      "maintainer_role": "memory-maintainer"
+      "maintainer_role": "memory-maintainer",
+      "guide": "docs/workstreams/memory.md"
     },
     {
       "id": "reasoning",
@@ -124,7 +127,8 @@
       "repository": null,
       "tested_commit": null,
       "dependencies": [],
-      "maintainer_role": "reasoning-maintainer"
+      "maintainer_role": "reasoning-maintainer",
+      "guide": "docs/workstreams/reasoning.md"
     },
     {
       "id": "tools",
@@ -135,7 +139,8 @@
       "repository": null,
       "tested_commit": null,
       "dependencies": [],
-      "maintainer_role": "tools-maintainer"
+      "maintainer_role": "tools-maintainer",
+      "guide": "docs/workstreams/tools.md"
     },
     {
       "id": "agent-coordination",
@@ -146,7 +151,8 @@
       "repository": null,
       "tested_commit": null,
       "dependencies": [],
-      "maintainer_role": "agent-coordination-maintainer"
+      "maintainer_role": "agent-coordination-maintainer",
+      "guide": "docs/workstreams/agent-coordination.md"
     },
     {
       "id": "research",
@@ -157,7 +163,8 @@
       "repository": null,
       "tested_commit": null,
       "dependencies": [],
-      "maintainer_role": "research-maintainer"
+      "maintainer_role": "research-maintainer",
+      "guide": "docs/workstreams/research.md"
     },
     {
       "id": "evaluation",
@@ -168,7 +175,8 @@
       "repository": null,
       "tested_commit": null,
       "dependencies": [],
-      "maintainer_role": "evaluation-maintainer"
+      "maintainer_role": "evaluation-maintainer",
+      "guide": "docs/workstreams/evaluation.md"
     },
     {
       "id": "reliability",
@@ -179,7 +187,8 @@
       "repository": null,
       "tested_commit": null,
       "dependencies": [],
-      "maintainer_role": "reliability-maintainer"
+      "maintainer_role": "reliability-maintainer",
+      "guide": "docs/workstreams/reliability.md"
     },
     {
       "id": "commons",
@@ -190,7 +199,20 @@
       "repository": null,
       "tested_commit": null,
       "dependencies": [],
-      "maintainer_role": "commons-maintainer"
+      "maintainer_role": "commons-maintainer",
+      "guide": "docs/workstreams/commons.md"
     }
+  ],
+  "current_focus": [
+    "inference",
+    "retrieval",
+    "memory",
+    "reasoning",
+    "tools",
+    "agent-coordination",
+    "research",
+    "evaluation",
+    "reliability",
+    "commons"
   ]
 }

@@ -1,0 +1,72 @@
+{
+  "id": "004-replicate-retrieval-example",
+  "title": "Independently repeat the retrieval fixture example",
+  "module": "retrieval",
+  "status": "ready",
+  "question": "Can another contributor repeat both the passing candidate and rejected unchanged baseline?",
+  "baseline": "Frozen artifacts in examples/retrieval/contract.json at the checked-out commit.",
+  "scope": [
+    "docs/replications/004-retrieval-example.md"
+  ],
+  "resources": "Python 3.11+, make, a CPU laptop. No network is needed after checkout.",
+  "budget": {
+    "minutes": 15,
+    "paid_compute": false
+  },
+  "acceptance": [
+    "Run make demo in a clean checkout and record all file hashes and the checkout commit.",
+    "Run make demo-reject; confirm the unchanged baseline cannot meet the gain threshold.",
+    "Compare per-query outputs with examples/retrieval/results/result.json. Report disagreements.",
+    "State that these public fixtures do not establish model capability or generalization.",
+    "Name the independent contributor and environment. Maintainers review replication credit."
+  ],
+  "checks": [
+    "make check",
+    "make demo",
+    "make demo-reject"
+  ],
+  "evidence": [
+    "Result JSON with file hashes and environment.",
+    "Passing and rejecting command outputs.",
+    "Time, attempt count, independent worker identity, and limitations."
+  ],
+  "stop_conditions": [
+    "15-minute budget reached.",
+    "A frozen hash or expected result differs; report it before changing code."
+  ],
+  "deliverable": "A replication record and raw result links. Do not change the grader, fixtures, baseline, or threshold.",
+  "issue_url": "https://github.com/Milbaxter/open-agi-commons/issues/4",
+  "priority": 10,
+  "dependencies": [],
+  "routing": {
+    "profile": "cpu",
+    "network": false,
+    "min_ram_gb": 2,
+    "work_type": "replication",
+    "artifact_access": "public"
+  },
+  "verification": {
+    "contract": "examples/retrieval/contract.json",
+    "baseline_artifacts": [
+      {
+        "path": "examples/retrieval/baseline.py",
+        "sha256": "69f49126f490fa6c913ecba14c359f27d444835759fc4334e6f5dc81698593dd"
+      },
+      {
+        "path": "examples/retrieval/corpus.json",
+        "sha256": "a445ad9b62adbe2edae825964b8a6a747c55d89f11f0508ac3d994ce3457bb34"
+      },
+      {
+        "path": "examples/retrieval/queries.json",
+        "sha256": "ec52031e4244e215640e2c9b715cc77483da15655b54ed08819a234cd557f00e"
+      },
+      {
+        "path": "scripts/run_retrieval_demo.py",
+        "sha256": "e1db24d3197a1c41c109470b3e41d5f0f4775f2fabd15aab087a71a450c16f6c"
+      }
+    ],
+    "command": "make demo && make demo-reject",
+    "expected_state": "fixture-measured",
+    "independent_required": true
+  }
+}

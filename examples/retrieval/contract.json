@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "retrieval-lexical-fixture-v1",
+  "scope": "Public, deterministic English lexical teaching fixtures. No model capability claim.",
+  "frozen_artifacts": [
+    {
+      "path": "examples/retrieval/baseline.py",
+      "sha256": "69f49126f490fa6c913ecba14c359f27d444835759fc4334e6f5dc81698593dd"
+    },
+    {
+      "path": "examples/retrieval/corpus.json",
+      "sha256": "a445ad9b62adbe2edae825964b8a6a747c55d89f11f0508ac3d994ce3457bb34"
+    },
+    {
+      "path": "examples/retrieval/queries.json",
+      "sha256": "ec52031e4244e215640e2c9b715cc77483da15655b54ed08819a234cd557f00e"
+    },
+    {
+      "path": "scripts/run_retrieval_demo.py",
+      "sha256": "e1db24d3197a1c41c109470b3e41d5f0f4775f2fabd15aab087a71a450c16f6c"
+    }
+  ],
+  "thresholds": {
+    "minimum_accuracy": 1.0,
+    "minimum_extra_correct": 3,
+    "minimum_acceptance_accuracy": 1.0,
+    "maximum_regressions": 0
+  },
+  "development_and_acceptance": "Both public. Acceptance split is a workflow example, not a hidden test set.",
+  "resources": {
+    "model_calls": 0,
+    "training_runs": 0,
+    "paid_compute": false
+  },
+  "independent_required": true
+}

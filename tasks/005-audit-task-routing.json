@@ -1,0 +1,46 @@
+{
+  "id": "005-audit-task-routing",
+  "title": "Test task routing against misleading readiness and resources",
+  "module": "commons",
+  "status": "ready",
+  "question": "Can the local picker suggest work that does not fit a contributor or has a known live claim?",
+  "baseline": "scripts/pick_task.py and scripts/task_contracts.py at the checked-out commit.",
+  "scope": [
+    "tests/test_task_picker_adversarial.py",
+    "docs/replications/005-task-routing-review.md"
+  ],
+  "resources": "Python 3.11+ and a CPU laptop. Simulate issue responses locally; no network or GPU is needed.",
+  "budget": {
+    "minutes": 20,
+    "paid_compute": false
+  },
+  "acceptance": [
+    "Add at least three new adversarial cases beyond tests/test_task_picker.py.",
+    "Use mocked issue responses and synthetic task copies; do not change task readiness or core acceptance rules.",
+    "Check declared resource fit, dependency completion, and failure to confirm live availability.",
+    "If a case exposes a real defect, report a minimal reproduction and proposed fix separately.",
+    "Do not claim the picker enforces agent spending or reserves a task."
+  ],
+  "checks": [
+    "make check"
+  ],
+  "evidence": [
+    "New test outputs and a brief review record.",
+    "Time spent, issues found, and limits."
+  ],
+  "stop_conditions": [
+    "20-minute budget reached.",
+    "A fix needs scope changes; report the defect and stop."
+  ],
+  "deliverable": "Adversarial tests and a review note that improve confidence in task selection.",
+  "issue_url": "https://github.com/Milbaxter/open-agi-commons/issues/5",
+  "priority": 20,
+  "dependencies": [],
+  "routing": {
+    "profile": "cpu",
+    "network": false,
+    "min_ram_gb": 4,
+    "work_type": "engineering",
+    "artifact_access": "public"
+  }
+}

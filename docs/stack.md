@@ -1,48 +1,83 @@
-# Stack map
+# The stack · from trained model to checked work
 
-Each row is a planned workstream. Component repos do not exist yet.
-The registry is the source for repo status and tested versions.
+**Our first focus is the system after the expensive training run.**
 
-| Part | Scope | Evidence of improvement |
+The mission still covers the full open AI stack.
+Hardware, data, and training matter. Their experiments often need large shared budgets.
+People with spare coding-tool capacity can start elsewhere.
+They can improve evidence access, state, plans, actions, and the checks around a fixed model.
+
+The table keeps all 17 parts in view.
+Each component repo is planned until [registry.json](../registry.json) marks it active.
+Workstream guides describe proposed work. They do not report model experiments.
+
+## The foundation
+
+| Part | Scope | Required evidence |
 | --- | --- | --- |
-| `compute` — Hardware and distributed compute | Scheduling, hardware use, storage, and fault recovery. | Run the same checked workload with less time, cost, or energy. Count retries and failures. |
-| `kernels` — Compilers and numerical software | Compilers, kernels, memory layouts, and numerical precision. | Pass reference correctness tests. Show speed or memory gains on real workloads and named hardware. |
-| `data` — Training data | Data collection, cleaning, labels, coverage, and data origins. | Improve unseen-task results at equal training compute. Check data rights and test contamination. |
-| `environments` — Environments and curricula | Simulators, task generators, learning order, and rewards. | Check rewards for exploits. Show learning transfers to separately made tasks. |
-| `architectures` — Model structures | Attention, recurrence, expert routing, representations, and world models. | Compare capability at equal training and inference budgets. State the tested model sizes. |
-| `pretraining` — Pretraining and optimization | Training objectives, optimizers, schedules, and stability. | Reach a fixed capability with fewer resources. Include failed runs and repeat measurements. |
-| `posttraining` — Post-training | Instruction tuning, reinforcement learning, feedback, and reward models. | Improve independent task results. Evaluate with a method separate from the training reward. |
-| `inference` — Inference and serving | Quantization, caching, batching, and adaptive compute. | Measure quality, cost, memory, and latency on fixed workloads. Include slow requests. |
-| `retrieval` — Knowledge access | Search, document parsing, retrieval, citations, and grounding. | Check retrieved evidence and final answers on unseen information. Report each result separately. |
-| `memory` — Memory and continual learning | Persistent memory, feedback, adaptation, and retention. | Improve long task sequences. Measure forgetting, false memory, and poisoned input. |
-| `reasoning` — Reasoning and planning | Search, plans, program generation, and proof construction. | Check executable solutions, proofs, or final outcomes. Count all attempts within a fixed budget. |
-| `tools` — Tool use and action | Software tools, browsers, computer use, and robot interfaces. | Check final outcomes, recovery, and permissions in varied environments. A transcript alone is insufficient. |
-| `agent-coordination` — Agent coordination | Delegation, routing, shared state, and cooperation in the system under study. | Compare with a strong single-agent baseline. Count communication, extra calls, and human help. |
-| `research` — Autonomous research | Hypotheses, experiment design, implementation, and result analysis. | Reproduce useful findings independently. Measure accepted outcomes per total resource budget. |
-| `evaluation` — Evaluation and verification | Benchmarks, graders, statistics, and contamination checks. | Detect known defects. Reproduce results. Test whether scores predict success on independent tasks. |
-| `reliability` — Reliability, alignment, and security | Constraint following, uncertainty, prompt injection, containment, and interpretability. | Reduce measured failures while retaining useful capability. Make testable claims with clear limits. |
-| `commons` — Project tools and reproducibility | Task formats, contribution tools, result records, and integration. | Let another person reproduce the result. Reduce the work needed to review and integrate useful changes. |
+| `compute` · Hardware and distributed compute | Scheduling, hardware use, storage, fault recovery. | The same checked workload uses less time, cost, or energy. Include retries and failures. |
+| `kernels` · Compilers and numerical software | Kernels, compilers, memory layout, numerical precision. | Reference correctness tests pass. Measure real workloads on named hardware. |
+| `data` · Training data | Collection, cleaning, labels, coverage, data origins. | Unseen-task gains at equal training compute. Check rights and contamination. |
+| `environments` · Environments and curricula | Simulators, task generators, learning order, rewards. | Detect reward exploits. Show transfer to independently prepared tasks. |
+| `architectures` · Model structures | Attention, recurrence, experts, representations, world models. | Compare capability at equal training and inference budgets. Name tested sizes. |
+| `pretraining` · Pretraining and optimization | Objectives, optimizers, schedules, training stability. | Reach fixed capability with fewer resources. Include failed and repeated runs. |
+| `posttraining` · Post-training | Instruction tuning, feedback, reinforcement learning, reward models. | Gains on independent tasks with evaluation separate from the training reward. |
 
+Post-training remains part of the training foundation here.
+Small adapter studies can fit later, with their own fixed training budget.
+The first downstream work keeps weights fixed to reduce experimental cost and uncertainty.
 
-## How the parts fit
+## The first contribution surface
 
-Compute, kernels, and data support training.
-Environments provide tasks and learning signals.
-Architecture, pretraining, and post-training produce models.
-Inference serves them. Retrieval, memory, reasoning, and tools support useful action.
-Agent coordination and research connect these parts into longer work.
-Evaluation, reliability, and reproducibility apply across the stack.
+| Part | What an agent can improve | What a verifier must check |
+| --- | --- | --- |
+| [Inference](workstreams/inference.md) | Caching, serving, quantization, routing, bounded retries. | Correct work per total budget, quality, peak memory, and slow requests. |
+| [Retrieval](workstreams/retrieval.md) | Parsing, search, ranking, source spans, citations. | Retrieved evidence and supported final answers, scored separately. |
+| [Memory](workstreams/memory.md) | Writes, recall, corrections, access, deletion. | Sequence outcomes, stale facts, false writes, and retained data. |
+| [Reasoning](workstreams/reasoning.md) | Plans, search, programs, proofs. | Executable solutions or proofs. Count every attempt. |
+| [Tools](workstreams/tools.md) | Adapters, browser actions, call validation, recovery. | Final state, permissions, and side effects in resettable environments. |
+| [Agent coordination](workstreams/agent-coordination.md) | Routing, handovers, shared state, cooperation. | A gain over a strong single agent at equal total resources. |
+| [Research](workstreams/research.md) | Hypotheses, experiments, replication, analysis. | Reproducible findings per complete resource budget. |
+| [Evaluation](workstreams/evaluation.md) | Tasks, graders, splits, statistics, contamination checks. | Known failures are rejected. Independent repeats support the decision. |
+| [Reliability](workstreams/reliability.md) | Injection resistance, permissions, constraints, recovery. | Fewer named failures with useful capability retained. |
+| [Commons](workstreams/commons.md) | Contracts, manifests, review tools, credit. | Another worker can repeat the work and inspect the evidence. |
 
-This overview coordinates project development.
-The `agent-coordination` workstream studies coordination in the AI system itself.
+## How the parts connect
 
-## First practical slice
+```mermaid
+flowchart TD
+    F[Compute · kernels · data · environments] --> W[Architecture · pretraining · post-training]
+    W --> M[Fixed trained model]
+    M --> I[Inference]
+    I --> A[Reference agent]
+    R[Retrieval] --> A
+    S[Memory] --> A
+    P[Reasoning] --> A
+    A --> T[Tools and final state]
+    C[Coordination] --> A
+    T --> E[Evaluation and independent repeat]
+    E --> K[Accepted result and shared evidence]
+    K --> Q[Bounded research question]
+    Q --> R
+    L[Reliability and resource limits] -.-> A
+    O[Commons contracts and records] -.-> E
+```
 
-Start with evaluation, inference, and memory.
-Select an open model and a small reference agent.
-Fix the task set and resource budget before testing changes.
-Accept the first capability claim only after an independent run confirms it.
+Keep interfaces small: request, evidence span, memory record, action,
+final outcome, and resource event.
+Each component test checks its own interface.
+A full-slice test checks whether the change improves useful work.
+Keep model quality, component quality, and integration quality as separate claims.
 
-Each future repo needs a scope, setup commands, one checked baseline,
-an improvement contract, and at least one ready task.
-Use the [maintainer role](../roles/component-maintainer.md) to prepare it.
+## What to build first
+
+1. Prepare a fixed document set, answer tasks, and a simple reference agent.
+2. Make the verifier reject missing evidence and wrong final answers.
+3. Add a complete resource ledger and enforced stop conditions.
+4. Improve retrieval or memory one change at a time.
+5. Repeat a promising result independently. Then test it in the full slice.
+6. Add coordination and research loops after the single-agent checks work.
+
+This is a proposed order. No new runtime component is active merely because it has a guide.
+The [workstream index](workstreams/README.md) gives the task-ready gate and evidence levels.
+The [maintainer role](../roles/component-maintainer.md) gives the queue process.

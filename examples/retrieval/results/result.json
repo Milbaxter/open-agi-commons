@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "contract_id": "retrieval-lexical-fixture-v1",
+  "generated_at": "2026-10-06T21:14:32+00:00",
+  "evidence_state": "fixture-measured",
+  "independent_verification": false,
+  "scope": "Deterministic public English lexical fixtures only. No model calls or capability claim.",
+  "environment": {
+    "python": "3.14.6",
+    "platform": "macOS-15.0-arm64-arm-64bit-Mach-O"
+  },
+  "checkout": {
+    "commit": "3c8e9929014703522e70b38d2c83cbe2d5ea1343",
+    "working_tree_dirty": true
+  },
+  "resources": {
+    "model_calls": 0,
+    "training_runs": 0,
+    "paid_compute": false,
+    "candidate_attempts_this_run": 1,
+    "ranker_calls": 48,
+    "ranking_seconds": 0.015342291968408972,
+    "note": "Wall time is descriptive, not an acceptance metric. Prior attempts must be recorded separately."
+  },
+  "artifacts": [
+    {
+      "path": "examples/retrieval/contract.json",
+      "sha256": "ccb5b98097c4fbd68899e7d5e8160079409df5c7d94ecc91fb0adf07b3f55d8c"
+    },
+    {
+      "path": "examples/retrieval/baseline.py",
+      "sha256": "69f49126f490fa6c913ecba14c359f27d444835759fc4334e6f5dc81698593dd"
+    },
+    {
+      "path": "examples/retrieval/corpus.json",
+      "sha256": "a445ad9b62adbe2edae825964b8a6a747c55d89f11f0508ac3d994ce3457bb34"
+    },
+    {
+      "path": "examples/retrieval/queries.json",
+      "sha256": "ec52031e4244e215640e2c9b715cc77483da15655b54ed08819a234cd557f00e"
+    },
+    {
+      "path": "scripts/run_retrieval_demo.py",
+      "sha256": "e1db24d3197a1c41c109470b3e41d5f0f4775f2fabd15aab087a71a450c16f6c"
+    },
+    {
+      "path": "examples/retrieval/candidate.py",
+      "sha256": "8cb784e90ee62728c2a0021de3f1f989b433949dba1ae99cb656ac4c34897ccb"
+    }
+  ],
+  "summary": {
+    "baseline_correct": 5,
+    "candidate_correct": 12,
+    "total": 12,
+    "baseline_accuracy": 0.4166666666666667,
+    "candidate_accuracy": 1.0,
+    "acceptance_correct": 8,
+    "acceptance_total": 8,
+    "regressions": [],
+    "guard_failures": [],
+    "gates": {
+      "overall_accuracy": true,
+      "minimum_gain": true,
+      "acceptance_accuracy": true,
+      "no_regressions": true,
+      "empty_and_no_overlap": true
+    },
+    "passed": true
+  },
+  "queries": [
+    {
+      "id": "whole-word-plan",
+      "split": "development",
+      "expected_top1": "b-plan",
+      "baseline_top1": "a-planet",
+      "baseline_correct": false,
+      "candidate_top1": "b-plan",
+      "candidate_correct": true
+    },
+    {
+      "id": "whole-word-cache",
+      "split": "development",
+      "expected_top1": "b-cache",
+      "baseline_top1": "a-cachet",
+      "baseline_correct": false,
+      "candidate_top1": "b-cache",
+      "candidate_correct": true
+    },
+    {
+      "id": "coverage-memory",
+      "split": "development",
+      "expected_top1": "b-memory-policy",
+      "baseline_top1": "a-memory-repeat",
+      "baseline_correct": false,
+      "candidate_top1": "b-memory-policy",
+      "candidate_correct": true
+    },
+    {
+      "id": "coverage-sources",
+      "split": "development",
+      "expected_top1": "b-cite",
+      "baseline_top1": "a-cite-repeat",
+      "baseline_correct": false,
+      "candidate_top1": "b-cite",
+      "candidate_correct": true
+    },
+    {
+      "id": "coverage-tool",
+      "split": "acceptance",
+      "expected_top1": "b-tool",
+      "baseline_top1": "a-tool-repeat",
+      "baseline_correct": false,
+      "candidate_top1": "b-tool",
+      "candidate_correct": true
+    },
+    {
+      "id": "plain-quantization",
+      "split": "acceptance",
+      "expected_top1": "b-serving",
+      "baseline_top1": "b-serving",
+      "baseline_correct": true,
+      "candidate_top1": "b-serving",
+      "candidate_correct": true
+    },
+    {
+      "id": "plain-retrieval",
+      "split": "acceptance",
+      "expected_top1": "b-retrieval",
+      "baseline_top1": "b-retrieval",
+      "baseline_correct": true,
+      "candidate_top1": "b-retrieval",
+      "candidate_correct": true
+    },
+    {
+      "id": "coverage-retention",
+      "split": "acceptance",
+      "expected_top1": "b-retention",
+      "baseline_top1": "a-memory-repeat",
+      "baseline_correct": false,
+      "candidate_top1": "b-retention",
+      "candidate_correct": true
+    },
+    {
+      "id": "no-overlap",
+      "split": "acceptance",
+      "expected_top1": null,
+      "baseline_top1": null,
+      "baseline_correct": true,
+      "candidate_top1": null,
+      "candidate_correct": true
+    },
+    {
+      "id": "empty-query",
+      "split": "acceptance",
+      "expected_top1": null,
+      "baseline_top1": null,
+      "baseline_correct": true,
+      "candidate_top1": null,
+      "candidate_correct": true
+    },
+    {
+      "id": "case-punctuation",
+      "split": "acceptance",
+      "expected_top1": "b-cache",
+      "baseline_top1": null,
+      "baseline_correct": false,
+      "candidate_top1": "b-cache",
+      "candidate_correct": true
+    },
+    {
+      "id": "query-punctuation",
+      "split": "acceptance",
+      "expected_top1": "b-plan",
+      "baseline_top1": "b-plan",
+      "baseline_correct": true,
+      "candidate_top1": "b-plan",
+      "candidate_correct": true
+    }
+  ]
+}

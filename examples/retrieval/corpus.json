@@ -1,0 +1,15 @@
+[
+  {"id": "a-planet", "text": "planet planetary planets plantation planet planetary"},
+  {"id": "b-plan", "text": "A plan gives a sequence of actions."},
+  {"id": "a-cachet", "text": "cachet cachet cachet cachet cachet"},
+  {"id": "b-cache", "text": "A cache stores a reusable response."},
+  {"id": "a-memory-repeat", "text": "memory memory memory memory memory memory"},
+  {"id": "b-memory-policy", "text": "Memory permissions control which user can read a stored record."},
+  {"id": "a-cite-repeat", "text": "cite cite cite cite cite cite"},
+  {"id": "b-cite", "text": "Cite sources that support each answer."},
+  {"id": "a-tool-repeat", "text": "tool tool tool tool tool"},
+  {"id": "b-tool", "text": "A tool timeout stops an action that takes too long."},
+  {"id": "b-serving", "text": "Quantization can reduce model memory use."},
+  {"id": "b-retrieval", "text": "Retrieval latency measures the time needed to find evidence."},
+  {"id": "b-retention", "text": "Test forgetting in memory over a sequence of tasks."}
+]

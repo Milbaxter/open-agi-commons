@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="408" viewBox="0 0 1440 408" role="img" aria-labelledby="title desc">
+  <title id="title">From spare capacity to a checked contribution</title>
+  <desc id="desc">Maintainers prepare a baseline and fixed task. Contributors choose work that fits their session. Agents build within scope. A separate verifier checks the result. Useful work is merged, credited, and used to prepare the next task.</desc>
+  <rect width="1440" height="408" fill="#182b32"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="48" y="54" font-size="15" letter-spacing="2" fill="#aec0ba">THE CONTRIBUTION LOOP</text>
+    <text x="48" y="104" font-size="35" font-weight="700" fill="#f6f2e9">Every session leaves something the next person can use.</text>
+    <g fill="none" stroke="#53666b">
+      <rect x="48" y="153" width="247" height="153" rx="6"/>
+      <rect x="322" y="153" width="247" height="153" rx="6"/>
+      <rect x="596" y="153" width="247" height="153" rx="6"/>
+      <rect x="870" y="153" width="247" height="153" rx="6"/>
+      <rect x="1144" y="153" width="248" height="153" rx="6"/>
+    </g>
+    <g fill="#e18e73" font-size="14" letter-spacing="1">
+      <text x="68" y="184">MAINTAINER</text><text x="342" y="184">CONTRIBUTOR</text>
+      <text x="616" y="184">WORKER</text><text x="890" y="184">VERIFIER</text><text x="1164" y="184">COMMONS</text>
+    </g>
+    <g fill="#f6f2e9" font-size="26" font-weight="700">
+      <text x="68" y="226">Prepare a task</text><text x="342" y="226">Check the fit</text>
+      <text x="616" y="226">Build a patch</text><text x="890" y="226">Repeat the check</text><text x="1164" y="226">Merge and credit</text>
+    </g>
+    <g fill="#becbc7" font-size="17">
+      <text x="68" y="261">Fixed baseline and rules</text><text x="68" y="287">Named evidence and budget</text>
+      <text x="342" y="261">Machine, time, access</text><text x="342" y="287">Confirm the task claim</text>
+      <text x="616" y="261">One change within scope</text><text x="616" y="287">Record every attempt</text>
+      <text x="890" y="261">Separate run and raw results</text><text x="890" y="287">Reject unsupported claims</text>
+      <text x="1164" y="261">Useful code and evidence</text><text x="1164" y="287">Prepare the next baseline</text>
+    </g>
+    <g fill="#e18e73" font-size="22"><text x="299" y="236">→</text><text x="573" y="236">→</text><text x="847" y="236">→</text><text x="1121" y="236">→</text></g>
+    <path d="M1280 321V353H171V321" fill="none" stroke="#829c92" stroke-width="1.5"/>
+    <path d="M166 329l5-8 5 8" fill="none" stroke="#829c92" stroke-width="1.5"/>
+    <rect x="518" y="338" width="403" height="30" fill="#182b32"/>
+    <text x="535" y="359" fill="#aec0ba" font-size="16">Failures and replications shape the next task.</text>
+  </g>
+</svg>
