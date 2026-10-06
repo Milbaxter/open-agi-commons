@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "contract_id": "retrieval-lexical-fixture-v1",
-  "generated_at": "2026-10-06T21:14:32+00:00",
+  "generated_at": "2026-10-06T21:16:33+00:00",
   "evidence_state": "fixture-measured",
   "independent_verification": false,
   "scope": "Deterministic public English lexical fixtures only. No model calls or capability claim.",
@@ -10,8 +10,8 @@
     "platform": "macOS-15.0-arm64-arm-64bit-Mach-O"
   },
   "checkout": {
-    "commit": "3c8e9929014703522e70b38d2c83cbe2d5ea1343",
-    "working_tree_dirty": true
+    "commit": "bb94d247ce3ddf3660cc5b4acad2ca4182154cf6",
+    "working_tree_dirty": false
   },
   "resources": {
     "model_calls": 0,
@@ -19,7 +19,7 @@
     "paid_compute": false,
     "candidate_attempts_this_run": 1,
     "ranker_calls": 48,
-    "ranking_seconds": 0.015342291968408972,
+    "ranking_seconds": 0.01016879198141396,
     "note": "Wall time is descriptive, not an acceptance metric. Prior attempts must be recorded separately."
   },
   "artifacts": [
